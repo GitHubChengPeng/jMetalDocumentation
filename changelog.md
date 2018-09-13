@@ -1,5 +1,28 @@
 ## Changelog 
 
+### Version: jMetal 5.6
+
+* Algorithms
+  * Algorithm [SMPSO/RP](https://github.com/jMetal/jMetal/blob/master/jmetal-algorithm/src/main/java/org/uma/jmetal/algorithm/multiobjective/smpso/SMPSORP.java). 
+  * Improvements in algorithms [WASF-GA](https://github.com/jMetal/jMetal/tree/master/jmetal-algorithm/src/main/java/org/uma/jmetal/algorithm/multiobjective/wasfga) and [GWASF-GA](https://github.com/jMetal/jMetal/tree/master/jmetal-algorithm/src/main/java/org/uma/jmetal/algorithm/multiobjective/gwasfga). Contribution of Rubén Saborido.
+  * Algorithm MOEA/D and variants can now return a subset of evenly distributed solutions (see Miscelanea)
+  * Algorithm [ESPEA](https://github.com/jMetal/jMetal/tree/master/jmetal-algorithm/src/main/java/org/uma/jmetal/algorithm/multiobjective/espea). Contribution of Marlon Braun.
+  * Algorithm [CDG-MOEA](https://github.com/jMetal/jMetal/blob/master/jmetal-algorithm/src/main/java/org/uma/jmetal/algorithm/multiobjective/cdg/CDG.java). Contribution of Feng Zhang and Xinye Cai.
+
+* Problems
+  * Problems of the [CEC 2018 competition on many-objective optimization](https://github.com/jMetal/jMetal/tree/master/jmetal-problem/src/main/java/org/uma/jmetal/problem/multiobjective/maf). Contribution of Gian Mauricio Fritsche.
+
+* Miscelanea
+  * Added class [KNearestNeighborhood](https://github.com/jMetal/jMetal/blob/master/jmetal-core/src/main/java/org/uma/jmetal/util/neighborhood/impl/KNearestNeighborhood.java). 
+  * Added new neighborhood classes: C25, C49, L13, L25 and L41 (https://github.com/jMetal/jMetal/tree/master/jmetal-core/src/main/java/org/uma/jmetal/util/neighborhood/impl).
+  * Added method `getSubsetOfEvenlyDistributedSolutions()` to class [MOEADUtils](https://github.com/jMetal/jMetal/blob/master/jmetal-algorithm/src/main/java/org/uma/jmetal/algorithm/multiobjective/moead/util/MOEADUtils.java).
+
+* Bugs
+  * Fixed a bug in the component of the experiment package that executes the algorithms in parallel. All the experiment classes in package jmetal-exec have been updated.
+  * Fixed a bug in the experiment framework which led to recompute quality indicators more times than needed.
+  * Fixed a bug in class `AbstractGenericSolution` caused by solutions stored as attributes. This issue might lead to infinite recursive calls when two solutions are compared.
+
+
 ### Version: jMetal 5.4
 
 * Algorithms
