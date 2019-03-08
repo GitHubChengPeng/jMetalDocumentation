@@ -1,5 +1,23 @@
 ## Changelog 
 
+### Version: jMetal 5.7
+* Algorithms
+  * [FAME](https://github.com/jMetal/jMetal/tree/master/jmetal-algorithm/src/main/java/org/uma/jmetal/algorithm/multiobjective/fame). Algorithm FAME ([DOI](https://doi.org/10.1016/j.ins.2018.09.005)), contributed by buy @AASantiago.
+  * [mIBEA](https://github.com/jMetal/jMetal/blob/master/jmetal-algorithm/src/main/java/org/uma/jmetal/algorithm/multiobjective/ibea/mIBEA). Variant of IBEA contributed buy @vinixnan. 
+  * [d-NSGA-II](https://github.com/jMetal/jMetal/blob/master/jmetal-algorithm/src/main/java/org/uma/jmetal/algorithm/multiobjective/nsgaii/DNSGAII.java). Algorithm D-NSGA-II contributed by @dynamic-sevn
+
+* New features
+  * When the quality indicators of an experiment are computed, a summary file called `QualityIndicatorSummary.csv` is generated. This is a CSV file containing the following fields: `Algorithm`, `Problem`, `IndicatorName`, `ExecutionId`, `IndicatorValue`.
+  * Added the [ComposableDoubleProblem](https://github.com/jMetal/jMetal/blob/master/jmetal-core/src/main/java/org/uma/jmetal/problem/impl/ComposableDoubleProblem.java) class, which allows to define a double problem dynamically.
+  * Class [ConstrainedProblem](https://github.com/jMetal/jMetal/blob/master/jmetal-core/src/main/java/org/uma/jmetal/problem/ConstrainedProblem.java) is deprecated, and all the problems depending on it have been refactored. 
+  * A method `getVariables()` has been added to class [`Solution`](https://github.com/jMetal/jMetal/blob/master/jmetal-core/src/main/java/org/uma/jmetal/solution/Solution.java).
+  * The [NSGAII](https://github.com/jMetal/jMetal/blob/master/jmetal-algorithm/src/main/java/org/uma/jmetal/algorithm/multiobjective/nsgaii/NSGAII.java) class has been refactored to allow to indicate the size of the mating pool and the offspring population. This allows, for example, to configure a state version of it by assigning the values `matingPoolSize = 2` and `offspringPopulationSize = 1`, so classes such as [SteadyStateNSGAII](https://github.com/jMetal/jMetal/blob/master/jmetal-algorithm/src/main/java/org/uma/jmetal/algorithm/multiobjective/nsgaii/SteadyStateNSGAII.java) are not necessary. All the classes related to NSGA-II have been refactored as a consequence.
+
+* Bugs
+  * Fixed a bug in class [EnviromentalSelection](https://github.com/jMetal/jMetal/blob/master/jmetal-algorithm/src/main/java/org/uma/jmetal/algorithm/multiobjective/spea2/util/EnvironmentalSelection.java). Thanks to @zorrozork
+
+
+
 ### Version: jMetal 5.6
 
 * Algorithms
